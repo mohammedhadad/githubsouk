@@ -1,0 +1,527 @@
+html
+{
+	height: 100%;
+}
+body 
+{
+	width: 1000px;
+	margin: auto;
+	padding: 0;
+	height: 100%;
+}
+p 
+{
+    margin: 0;
+}
+img 
+{
+    border: 0;
+	
+}
+li 
+{
+   list-style-type: none;
+}
+ul
+{
+   margin: 0;
+   padding: 0;
+}
+#fond_site1
+{
+	width: 1000px;
+	background-color: #FFF;
+	margin: 0;
+	padding: 12px 0 0 0;
+	height: 100%
+}
+#fond_site2
+{
+	width: 1000px;
+	background-color: #FFF;
+	/*box-shadow: 1px 1px 12px #555;pour rajouter une ombre au fond*/
+	margin:0;
+	padding-bottom:20px;
+}
+#haut_site
+{   
+background: url("marche-marrakech.jpg"/*tpa=http://www.i-souk.com/images/marche-marrakech.jpg*/) 120% 90% no-repeat;    
+	margin: auto;
+	width: 950px;
+	height: 160px;
+}
+#p_logo
+{   
+    float : left;
+    width: 400px;
+	height: 106px;line-height: 0.8em;
+}
+#p_pub
+{   
+	float : left;
+    width: 628px;
+	height: 90px;
+}
+#barre_liens
+{   
+    clear: both;
+	margin: auto;
+	background: url("barre_liens.png"/*tpa=http://www.i-souk.com/images/barre_liens.png*/) no-repeat;
+    width: 932px;
+	height: 43px;
+	margin-top: 1px;
+	padding-right: 18px;
+	text-align: center;
+padding-top: 52px;
+padding-bottom:0;
+}
+#recherche
+{   
+    margin-top:0;
+	clear: both;
+	margin: auto;
+	width: 950px;
+height: 30px;
+background-color:#AF0000;
+padding-bottom:0;
+}
+
+#recherche_plus
+{   
+    clear: both;
+	margin: auto;
+	width: 950px;
+	min-height: 21px;
+	margin-top: 12px;
+}
+
+#input_recherche1
+{   
+   padding-top:0;
+   padding-left: 36px;
+   float: left;
+   padding-right: 5px;
+}
+
+#input_recherche2
+{   
+   float: left;
+}
+#bloc_info_right
+{   
+   float: right;
+}
+#option
+{   
+    clear: both;
+    width: 950px;
+	margin-top: 7px;
+}
+#barre_info
+{   
+    clear: both;
+    width: 950px;
+	height: 20px;
+	margin: auto;
+	margin-top: 3px;
+}
+#input_recherche_bord
+{   
+   float: right;
+   padding-right: 5px;
+}
+.bt_info_left
+{
+	
+	float: left;
+	width: 15px;
+	height: 20px;
+	background: url("bt_info_left.png"/*tpa=http://www.i-souk.com/images/bt_info_left.png*/) no-repeat;
+}
+.bt_info_center
+{
+	
+	float: left;
+	height: 20px;
+	background: url("bt_info_center.png"/*tpa=http://www.i-souk.com/images/bt_info_center.png*/) repeat-x;
+}
+.bt_info_right
+{
+	
+	float: left;
+	width: 21px;
+	height: 20px;
+	background: url("bt_info_right.png"/*tpa=http://www.i-souk.com/images/bt_info_right.png*/) no-repeat;
+}
+.bt_info_right2
+{
+	float: left;
+	width: 36px;
+	height: 20px;
+	background: url("bt_info_right2.png"/*tpa=http://www.i-souk.com/images/bt_info_right2.png*/) no-repeat;
+}
+.bt_info_center_v
+{
+	float: left;
+	height: 20px;
+	background: url("bt_info_center_v.png"/*tpa=http://www.i-souk.com/images/bt_info_center_v.png*/) repeat-x;
+}
+.bt_info_right_v
+{
+	float: left;
+	width: 21px;
+	height: 20px;
+	background: url("bt_info_right_v.png"/*tpa=http://www.i-souk.com/images/bt_info_right_v.png*/) no-repeat;
+}
+.bt_info_right_v2
+{
+	float: left;
+	width: 36px;
+	height: 20px;
+	background: url("bt_info_right_v2.png"/*tpa=http://www.i-souk.com/images/bt_info_right_v2.png*/) no-repeat;
+}
+#bloc_reseaux
+{
+	float: left;
+	margin-left: 10px;
+	padding-top: 1px;
+}
+#bloc_center
+{
+	margin: auto;
+	width: 950px;
+}
+#middle_bloc_center
+{
+	float: left;
+	width: 948px;
+	border: 1px solid #FFF;
+	background-color: #FFFFFF;
+	margin-top: 0;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	padding-top:0;
+	}
+	
+#region
+{   
+    
+	clear: both;
+	float: left;
+    width: 206px;
+	margin-left: 0;
+	padding-top: 4px;
+	line-height: 1.4em;
+}
+#carte
+{   
+	float: left;
+    width: 500px;
+	height: 559px;
+	background: transparent url("carte.png"/*tpa=http://www.i-souk.com/images/map/carte.png*/) no-repeat;
+	margin-top: 0;
+}
+#info_site
+{   
+	float: right;
+    width: 220px;
+	margin-top: 10px;
+	margin-left: 0;
+}
+#bloc_categories
+{
+/*background: url("../images/souk-maroc.jpg") no-repeat;*/
+	clear: both;
+	margin: auto;
+	width: 950px;
+	margin-top: 20px;
+}
+#bloc_cat
+{
+/*background: url("../images/tapis-maroc.jpg") no-repeat;*/	
+	float: left;
+	width: 182px;
+	padding-bottom: 20px;margin-bottom: 10px;
+	padding-left: 8px;
+
+}
+#bloc_cat2
+{
+	clear: both;
+	float: left;
+	width: 182px;
+	padding-bottom: 20px;
+	padding-left: 8px;
+}
+#bas_site
+{   
+	clear: both;
+	margin: auto;
+    width: 950px;
+	height: 140px;
+	background-color: #AF0000;
+background: url("caravane-maroc.jpg"/*tpa=http://www.i-souk.com/images/caravane-maroc.jpg*/) no-repeat;
+	margin-top: 15px;
+	
+}
+#corps
+{   
+	clear: both;
+    width: 950px;
+	padding-top: 30px;
+}
+.corps_both
+{   
+	clear: both;
+	float: left;
+    width: 950px;
+	padding-bottom: 25px;
+}
+.f_left_ph
+{
+	float: left;
+	padding-left: 5px;
+	padding-right: 8px;
+}
+.f_left
+{
+	float: left;
+	padding-left: 7px;
+}
+#corps_info_ann
+{   
+	clear: both;
+	margin: auto;
+    width: 950px;
+	padding-top: 10px;
+}
+#corps_ann
+{   
+	clear: both;
+	float: left;
+	width: 705px;
+	margin-left: 22px;
+	margin-top: 10px;
+}
+#corps_ann_left
+{   
+	clear: both;
+	float: left;
+	width: 690px;
+}
+#corps_ann_right
+{   
+	margin-left:10px;
+	float: left;
+	width: 240px;
+	margin-top: 43px;
+}
+
+#corps_ann_right2
+{   
+	margin-left:10px;
+	float: left;
+	width: 240px;
+	margin-top: 23px;
+}
+
+#bloc_info_ann_right
+{
+	clear: both;
+	float: left;
+	width: 205px;
+	margin-left: 14px;
+}
+#bloc_info_ann_left
+{
+	float: left;
+	width: 462px;
+}
+#bloc_envoye_ami
+{
+	clear: both;
+	float: left;
+	width: 680px;
+	margin-left: 14px;
+	margin-top: 20px;
+}
+.top_menu_ann
+{
+	clear: both;
+	float: left;
+	margin-left:0;
+	width: 199px;
+	height: 21px;
+	background: url("top_menu_ann.png"/*tpa=http://www.i-souk.com/images/top_menu_ann.png*/) no-repeat;
+	text-align: center;
+}
+.middle_menu_ann
+{
+	clear: both;
+	float: left;
+	width: 210px;
+	margin-left: 30px;
+	margin-top: 5px;
+	margin-bottom: 25px;
+}
+
+.middle_menu_ann2
+{
+	clear: both;
+	float: left;
+	width: 210px;
+	margin-left:5px;
+	margin-top: 5px;
+	margin-bottom:5px;
+}
+
+#corps_pub
+{   
+	float: left;
+    width: 221px;
+	text-align: center;
+}
+#img_une
+{   
+	margin: auto;
+	width: 183px;
+	height: 21px;
+	background: url("img_une.png"/*tpa=http://www.i-souk.com/images/img_une.png*/) no-repeat;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.fond_ann_une
+{
+	margin: auto;
+    width: 183px;
+	height: 179px;
+	background: url("fond_ann_une.png"/*tpa=http://www.i-souk.com/images/fond_ann_une.png*/) no-repeat;
+	margin-bottom: 20px;
+}
+.bloc_ann1
+{   
+	clear: both;
+    width: 740px;
+	height: 30px;
+}
+.bloc_ann2
+{   
+	clear: both;
+    width: 705px;
+	height: 140px;
+	background: url("fond_listing.png"/*tpa=http://www.i-souk.com/images/fond_listing.png*/) no-repeat;
+	margin-bottom: 10px;
+}
+.bloc_ann2_enc
+{   
+	clear: both;
+    width: 705px;
+	height: 140px;
+	background: url("fond_listing2.png"/*tpa=http://www.i-souk.com/images/fond_listing2.png*/) no-repeat;
+	margin-bottom: 10px;
+}
+.bloc_ann_sel
+{   
+	clear: both;
+    width: 950px;
+	height: 80px;
+}
+.bloc_pub_ann
+{   
+	clear: both;
+    width: 200px;
+	height: 65px;
+	background: url("pub_fond_ann.png"/*tpa=http://www.i-souk.com/images/pub_fond_ann.png*/) no-repeat;
+	margin-bottom: 10px;
+	margin-left: 30px;
+}
+.bloc_pub_ann2
+{   
+	clear: both;
+    width: 200px;
+	margin-left: 30px;
+}
+.bloc_boutique
+{   
+	clear: both;
+    width: 705px;
+	height: 120px;
+	background: url("fond_listing3.png"/*tpa=http://www.i-souk.com/images/fond_listing3.png*/) no-repeat;
+	margin-bottom: 5px;
+}
+.p_pub_ann_img
+{   
+	float: left;
+    width: 60px;
+	padding-top: 8px;
+	margin-left: 10px;
+	text-align: left;
+}
+.p_pub_ann_txt
+{   
+	float: left;
+    width: 120px;
+	margin-top: 4px;
+	margin-right: 10px;
+	text-align: left;
+}
+.bloc_pub_list
+{   
+	clear: both;
+	margin: auto;
+    width: 183px;
+	height: 65px;
+	background: url("pub_fond_list.png"/*tpa=http://www.i-souk.com/images/pub_fond_list.png*/) no-repeat;
+	margin-bottom: 10px;
+}
+.p_pub_list_img
+{   
+	float: left;
+    width: 60px;
+	margin-top: 8px;
+	margin-left: 10px;
+	text-align: left;
+}
+.p_pub_list_txt
+{   
+	float: left;
+    width: 103px;
+	margin-top: 4px;
+	margin-right: 10px;
+	text-align: left;
+}
+.espace_pub
+{
+	height: 8px;
+}
+#corps_ann_selection
+{   
+	clear: both;
+	float: left;
+	width: 705px;
+	margin-left: 22px;
+	margin-top: 20px;
+}
+.sup_selection
+{
+	position: absolute;
+	margin-top: 65px;
+	margin-left: 670px;
+}
+#corps_bout_left
+{   
+	clear: both;
+	float: left;
+	width: 690px;
+}
+#corps_bout_right
+{   
+	float: left;
+	width: 258px;
+	margin-top: 20px;
+}
+#corps_desc_bout
+{   
+	clear: both;
+	float: left;
+}

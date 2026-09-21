@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-FR" lang="fr-FR">
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+<title>Liens Partenaires</title>
+
+<meta name="Description" content="" />
+<meta name="Keywords" lang="fr" content="" />
+<meta name="Robots" content="all" />
+<meta name="google-site-verification" content="AFrsJ4_xjZqi9dYIPti60H1UttjEVcDAMK7tXVMmLiw" />
+<link href="structure.css" tppabs="http://www.i-souk.com/style/structure.css" type="text/css" rel="stylesheet" />
+<link href="style.css" tppabs="http://www.i-souk.com/style/style.css" type="text/css" rel="stylesheet" />
+<link href="css-family=Parisienne.css" tppabs="http://fonts.googleapis.com/css?family=Parisienne" rel='stylesheet' type='text/css'>
+<link href="css-family=Ribeye+Marrow.css" tppabs="http://fonts.googleapis.com/css?family=Ribeye+Marrow" rel='stylesheet' type='text/css'>
+<script type = "text/javascript">
+
+	var XMLHttp;
+	/* Creation de l'objet XML Http en fonction du navigateur */
+	if (navigator.appName == 'Microsoft Internet Explorer') {
+	      XMLHttp = new ActiveXObject('Microsoft.XMLHTTP');
+	      } else {
+	              XMLHttp = new XMLHttpRequest();
+	     }
+	function get_currency() {
+	  /* variables - initialisation avec les valeurs saisies dans "currency_form" */
+	  var currency_from = "";
+	  var currency_to = "";
+	  var value_amount = 1;
+	  /* montant à convertir */
+	  var form_value_amount = document.getElementById('amount');
+	  value_amount = form_value_amount.value;
+	  /* on recupere la devise de départ */
+	  var sel_currency_from = document.getElementById('list_currency_from');
+	  currency_from = sel_currency_from.value;
+	  /* on recupere la devise d'arrivé */
+	  var sel_currency_to = document.getElementById('list_currency_to');
+	  currency_to = sel_currency_to.value;
+	  /* Aucune devise de choisi, arrêter */
+	  if ( currency_from != "" || currency_to != "") {
+	      /* On envoie la requete au serveur  */
+	      var url = "includes/amount_currency.php?" + "amount_from=" + value_amount + "&currency_from=" + currency_from + "&currency_to=" + currency_to;
+	      XMLHttp.open("GET", url, true);
+	      XMLHttp.onreadystatechange = function() {
+	          if (XMLHttp.readyState == 4) {
+	             /* Quande le serveur a fini son travail, afficher le résultat */
+	            var response = value_amount + " " + currency_from + " = " + XMLHttp.responseText + " " + currency_to;
+	            document.getElementById('result_area').innerHTML = response;
+	          }
+		  
+		      }
+			  XMLHttp.send(null);
+	          } else {
+	       alert ("Please select a currency")
+	  }
+	  }
+	  
+</script>
+
+</head>
+
+<body>
+<div id="fond_site1">
+<div id="fond_site2">
+
+
+
+<div id="comptes">
+    <li class="li_barre"><a href="login.html" style="font-weight:bold;">دخول / Login</a></li>	<li class="li_barre"><a href="account.html">أضف منتج</a></li>
+    <li class="li_barre"><img src="compte_membre.jpg" tppabs="http://www.i-souk.com/images/compte_membre.jpg" hspace="3px" align="absmiddle"/> <a href="compte_crea.php.htm" tppabs="register.html">Compte membre</a></li>	<li class="li_barre"><img src="compte_pro.jpg" tppabs="http://www.i-souk.com/images/compte_pro.jpg" hspace="3px" align="absmiddle"/> <a href="compte_crea2.php.htm" tppabs="register.html">Compte PRO</a></li></div>
+
+<div id="haut_site">
+
+	<p id="p_logo">
+		<a href="index.htm" tppabs="http://www.i-souk.com/"><img src="annonces-maroc.gif.png" tppabs="http://www.i-souk.com/images/annonces-maroc.gif" alt="Petites annonces du maroc" /></a><br /><span style="padding-left: 60px;font-family:Zapfino, 'Parisienne', cursive, 'Times New Roman', Times, serif;">Le march&eacute; d'annonces du Maroc</span>
+	</p>
+	<p style="float:right;padding-top: 10px;text-shadow: 1px 3px 0 #FFF;border: 1px dotted #999;width: 500px;">
+        <span style="font-size: 20px;font-family:Lucida Handwriting, Tahoma, Geneva, sans-serif;color: #AF0000;padding-left: 40px;">Annonces gratuites pour tout le Maroc!</span><br />
+        <span style="font-size: 17px;color: #333;padding-left: 30px;font-family: Comic Sans MS, 'Times New Roman', Times, serif;">Petites annonces pour particuliers et professionnels</span><br />
+        <span style="font-size: 19px;color: #825223;padding-left: 20px;font-family: Apple Chancery, Arial, Helvetica, sans-serif;">Publication des annonces par régions et par catégories!</span>
+	</p>
+    
+	<!--<p id="p_pub">
+		<a href="http://www.4netwebs.com" onclick="window.open(this.href); return false;"><img src="images/pub/pub_428x90.jpg" width="728" height="90" alt="" /></a>	</p>-->
+
+</div>
+
+<div id="barre_liens">
+
+	<ul class="ul_barre">
+		<li class="li_barre"><a href="index.htm" tppabs="http://www.i-souk.com/">Accueil</a></li>
+        <li class="li_barre"><a href="index.php.htm#cat" tppabs="http://www.i-souk.com/index.php#cat">Categories</a></li>
+		<li class="li_barre"><a style="font-family:'Courier New', Courier, monospace;background-color:#000;padding: 2px 3px;" href="deposer-une-annonce.htm" tppabs="http://www.i-souk.com/deposer-une-annonce.htm"><strong>Publier une annonce</strong></a>
+		<li class="li_barre"><a href="ann_type.php-type=1.htm" tppabs="http://www.i-souk.com/ann_type.php?type=1">Offres</a></li>
+		<li class="li_barre"><a href="ann_type.php-type=2.htm" tppabs="http://www.i-souk.com/ann_type.php?type=2">Recherches</a></li>
+		<li class="li_barre"><a href="ann_type.php-type=3.htm" tppabs="http://www.i-souk.com/ann_type.php?type=3">Echanges</a></li>
+		<li class="li_barre"><a href="ann_type.php-type=4.htm" tppabs="http://www.i-souk.com/ann_type.php?type=4">Dons</a></li>
+		<li class="li_barre"><a href="selection.php.htm" tppabs="http://www.i-souk.com/selection.php">Sélection (0)</a></li>
+		<!--<li class="li_barre"><a href="#" onclick="Favoris('< ?php echo $title; ?>', '< ?php echo 'http://'. $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>');">< ?php echo $language['lien_favoris']; ?></a></li>-->
+		<!--<li class="li_barre"><a href="compte_crea.php">Compte membre</a></li>-->
+		<!--<li class="li_barre"><a href="compte_crea2.php">Compte PRO</a></li>-->
+		<li class="li_barre"><a href="boutiques_search.php.htm" tppabs="#/">Boutique(s)</a></li>		<li class="li_barre"><a href="faq.htm" tppabs="http://www.i-souk.com/faq.htm">FAQ</a></li>
+	</ul>
+	
+</div>
+
+<form method="get" action="#/" style="margin-top:0;">
+
+<div id="recherche">
+
+		<div id="input_recherche1">
+		<input type="text" class="input_recherche" name="q" onfocus="InputCon(this, 'Rechercher')" onblur="InputCon(this, 'Rechercher')" value="Rechercher" />
+		<input type="text" class="input_postal" name="cod" onfocus="InputCon(this, 'Ex: 40000')" onblur="InputCon(this, 'Ex: 40000')" value="Ex: 40000" />
+		<select id="opt" name="sea_cat" class="select_recherche" onchange="GetOptions()">
+			<option value="0">Toutes catégories</option><option class="select_cat" value="VÉHICULES/BATEAUX">VÉHICULES/BATEAUX</option><option value="2">Voitures</option><option value="3">Motos/scooters/Quads</option><option value="4">Caravaning</option><option value="5">Utilitaires</option><option value="7">Pièces détachées</option><option value="6">Accessoires Auto/Moto</option><option value="145">Accessoires nautiques</option><option value="8">Bateaux/Jet Ski</option><option value="9">Vélos/bicyclettes</option><option value="57">Location</option><option value="58">Assurances</option><option class="select_cat" value="IMMOBILIER">IMMOBILIER</option><option value="11">Immobilier à vendre</option><option value="12">Immobilier à louer</option><option value="13">Terrains</option><option value="14">Colocations</option><option value="15">Garages/Parkings</option><option value="16">Location Meublée</option><option value="17">Bureaux et commerces</option><option value="54">Echange Appt/Maison</option><option value="55">Location Vacances</option><option value="56">Services Immobiliers</option><option value="126">Services financiers</option><option value="127">Architectes</option><option class="select_cat" value="EMPLOI/TRAVAIL">EMPLOI/TRAVAIL</option><option value="19">Emplois saisonniers</option><option value="20">Cours particuliers</option><option value="21">Services</option><option value="45">CDD/CDI</option><option value="48">Interim</option><option value="49">Offres de stages</option><option value="50">Demandes de stages</option><option value="51">Recherche Emploi / CV </option><option value="52">Offres Emploi</option><option value="53">Job Etudiant</option><option value="110">Formations</option><option class="select_cat" value="MODE &AMP; BEAUTÉ">MODE &AMP; BEAUTÉ</option><option value="104">Vêtements Femme</option><option value="105">Vêtements Hommes</option><option value="106">Vêtements Enfants</option><option value="23">Ceintures/Accessoires.</option><option value="25">Montres et bijoux</option><option value="24">Puériculture </option><option value="107">Beauté/Santé</option><option value="108">Chaussures</option><option value="109">Sacs à main</option><option value="144">Bonnes affaires</option><option value="143">Autres annonces vente</option><option class="select_cat" value="MAISON">MAISON</option><option value="32">Mobilier</option><option value="33">Electroménager</option><option value="34">Bricolage</option><option value="35">Décoration</option><option value="111">Jardinage</option><option value="112">Chauffage</option><option value="113">Antiquité/Art</option><option value="114">Art de la table</option><option value="115">Domotique/Sécurité</option><option value="116">Matériaux construction</option><option value="117">Matelas/Literie</option><option value="125">Linge de maison</option><option class="select_cat" value="MATÉRIEL PRO.">MATÉRIEL PRO.</option><option value="27">Imprimerie</option><option value="28">Informatique</option><option value="29">Destockage</option><option value="30">Construction</option><option value="128">Travaux publics</option><option value="129">Automobile</option><option value="130">Agricole</option><option value="131">Electrique</option><option value="132">Netoyage</option><option value="133">Machines &amp; Robots</option><option value="134">Audiovisuel</option><option value="135">Medical</option><option value="136">Hotelier</option><option value="137">Bureautique</option><option value="138">Commercial</option><option value="139">Autre matériel pro.</option><option class="select_cat" value="LOISIRS &AMP; DÉTENTE">LOISIRS &AMP; DÉTENTE</option><option value="37">Films/DVD</option><option value="38">Musique/CD</option><option value="39">Livres/Magazines</option><option value="40">Jeux et jouets</option><option value="41">Forme/détente</option><option value="42">Sport &amp; Hobbies</option><option value="43">Collections</option><option value="44">Consoles/Jeux vidéo</option><option value="118">Informatique</option><option value="119">Téléphonie</option><option value="120">TV/Son/iPod</option><option value="121">Billeterie</option><option value="122">Photo/Vidéo</option><option value="123">Vin/Gastronomie</option><option value="124">Instruments musique</option><option value="140">Animations/Déguisements</option><option class="select_cat" value="MARCHÉ AU MARIAGE">MARCHÉ AU MARIAGE</option><option value="60">Listes de mariages</option><option value="61">Robes de mariées</option><option value="142">Costumes</option><option value="62">Animation/Orchestre</option><option value="63">Mariage au Maroc</option><option value="64">Traiteur</option><option value="65">Photo et Vidéo</option><option value="66">Organisation de mariage</option><option value="67">Haute couture marocaine</option><option value="68">Alliances/Bijoux</option><option value="69">Lieu de réception</option><option value="70">Coiffure Beauté</option><option value="71">Mariage à l&#039;étranger</option><option value="72">Voyage de noces</option><option value="73">Accessoires de fête</option><option value="74">Rencontres</option><option class="select_cat" value="ANIMAUX">ANIMAUX</option><option value="91">Chiens/Chiots</option><option value="92">Chats/Chatons</option><option value="93">Chevaux/Equidés</option><option value="146">Oiseaux/poissons</option><option value="94">Animaux de la ferme</option><option value="95">Animaux exotiques</option><option value="97">Accessoires/Fournitures</option><option value="98">Garde d&#039;animaux</option><option value="99">Promenades de chiens</option><option value="100">Dons/Adoptions</option><option value="101">Vétérinaires</option><option value="102">Perdus/Trouvés</option><option value="103">Autres animaux</option><option class="select_cat" value="SERVICES">SERVICES</option><option value="76">Artisan/Dépannage</option><option value="77">Déménagement/Garde Meubles</option><option value="78">Organisation Evènement</option><option value="79">Photographie/Vidéo</option><option value="80">Services financiers</option><option value="81">Services informatiques</option><option value="82">Services de traduction</option><option value="83">Services à domicile</option><option value="84">Services de sécurité</option><option value="85">Aide à la personne</option><option value="86">Baby Sitting</option><option value="88">Homme à tout faire</option><option value="89">Massages/Soins</option><option value="96">Cours et Leçons</option><option value="141">Covoiturage</option><option value="87">Autres services</option></select> <select id="dep" name="sea_reg" class="select_recherche" onchange="GetDepartements()">
+			<option value="0">Toutes régions</option><option value="1">Tanger Tétouan</option><option value="2">Taza Al Hoceima Taounate</option><option value="3">Oriental</option><option value="4">Gharb Chrarda Béni Hssen</option><option value="5">Fés Boulemane</option><option value="6">Rabat Salé Zammour Zaer</option><option value="7">Meknes Tafilalet</option><option value="8">Grand Casablanca</option><option value="9">Chaouia Ouardigha</option><option value="10">Tadla Azilal</option><option value="11">Doukkala Abda</option><option value="12">Marrakech Tensift Al Haouz</option><option value="13">Souss Massa Draâ</option><option value="14">Guelmin Es Smara</option><option value="15">Laâyoune Boujdour Sakia Hamra</option><option value="16">Oued Eddahab-Laguira</option></select> <span id="get_departements"></span></div><div id="input_recherche2"><input type="image" src="bouton_search.png" tppabs="http://www.i-souk.com/images/bouton_search.png" value="Chercher" /></div><div id="get_options"></div>			
+			<!--<div id="recherche_plus">
+				<input type="checkbox" class="input_checkbox" id="titre" name="titre" value="1" onclick="turnImgCheck(this);"  />
+				<img src="images/check1.png" id="img_check_titre" alt="" /> 
+				&nbsp;<span class="txt_info_rec_plus"><label for="titre">Recherche dans le titre uniquement</label></span> &nbsp;
+			</div>-->
+			
+			
+
+</div>
+
+</form>
+
+
+<div id="barre_info">
+
+	<div class="bt_info_left"></div>
+	<div class="bt_info_center">
+		
+        <p class="p_barre_info_left">
+		Liens Partenaires		</p>
+	</div>
+	<div class="bt_info_right"></div>
+	
+	<div id="bloc_info_right">
+		<p class="p_barre_info_right">
+			<span class="vert bold">16</span> <span class="vert bold">annonces</span> sur tout le site ! 
+		</p>
+	</div>
+
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr-FR" lang="fr-FR">
+
+
+
+<head>
+<title>i-souk- Partenaires, echange de liens en dur, soumission automatique, Page Rank, text6 - Page 1</title>
+<meta name="description" content="i-souk- Partenaires, echange de liens en dur, soumission automatique, Page Rank, text6 Lien en dur immédiat - Page 1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--<link rel="shortcut icon" href="http:/votredomaine/favicon.ico">-->
+<meta http-equiv="content-Language" content="fr">
+<meta name="keywords" content=" A REMPLIR ">
+<meta name="robots" content="index, follow, all">
+<meta name="revisit-after" content="7 days">
+<meta name="audience" content="Tous">
+<!--<meta name="Identifier-URL" content="http://votredomaine">-->
+<meta http-equiv="imagetoolbar" content="no">
+<link href="style.css" tppabs="http://www.i-souk.com/style/style.css" type="text/css" rel="stylesheet" />
+<!--<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "votre identifiant";
+urchinTracker();
+</script> -->
+
+<script>
+	
+	
+	$(function(){
+	$(".tooltip").tipTip({maxWidth: "auto", edgeOffset: 5});
+	});
+	
+	</script>
+	<script type="text/javascript">
+	<!--
+	/*
+	Script téléchargé du Coin Web de QuentinC
+	http://www.quentinc.net/
+	
+	Nom du script : Zone de texte avec compteur de caractères
+	
+	Catégorie : Formulaires
+	Date de dernière modification : Lundi 23 janvier 2006 15:30
+	URL exact : /javascript/script58-exec-zone-de-texte-avec-compteur-de-caracteres/
+	
+	Vous trouverez d'autres scripts à l'adresse : 
+	http://www.quentinc.net/javascript/
+	
+	© 2002-2006, QuentinC
+	Vous pouvez utiliser, modifier et redistribuer ce script, à condition de laisser les présents commentaires intacts, et de ne pas l'utiliser à des fins commerciales.
+	*/
+	function setCharCounter (a, b, n) {
+	var o = document.getElementById(a);
+	o.charCounterMax
+	= n;
+	o.charCounterDisplay = b;
+	o.onkeyup = charCounterUpdate;
+	}
+	function charCounterUpdate () {
+	var n = this.value.length;
+	if (n > this.charCounterMax)
+	{ 
+	alert("Vous ne pouvez pas dépasser " + this.charCounterMax + " caractères pour cette zone.");
+	return false;
+	}
+	if (this.charCounterDisplay)
+	{
+	var o = document.getElementById(this.charCounterDisplay);
+	if (o.tagName.toLowerCase()=="input") o.value = n;
+	else o.innerHTML = n;
+	}
+	
+	}
+	
+	// -->
+	</script>
+	
+
+
+</head>
+
+<body>
+<!--<h1 align="center"><a href="http://www.i-souk.com">text6</a></h1>
+
+
+<<p align="center">2 derniers sites: <a href="http://www.schoollege-classifieds.com">schoollege classifieds</a> | <a href="http://www.schoollege-classifieds.com">schoollege classifieds</a></p>-->
+
+
+
+
+<style type="text/css">
+<!--
+.Style1 {color: #000000}
+-->
+</style>
+
+
+<table width="90%" align="center" border="0" style="margin-top:30px;text-align:justify;">
+
+<tr></tr>
+<tr>
+    <td> 
+            <h1 style="padding-left: 250px;color:#AF0000;">Bienvenue sur la page de liens de www.i-souk.com</h1>
+      <br /><br /><br />
+      <p>Ajoutez des liens en dur sur votre site et profitez d'un r&eacute;f&eacute;rencement 
+      efficace, r&eacute;guli&egrave;rement mis &agrave; jour, avec affichage 
+      de votre Page Rank, ajoutez votre site dans la liste de nos partenaires, 
+      la validation sera imm&eacute;diate.<br /><br />
+      Pour augmenter la popularité de votre site, rajoutez votre URL sur cette page. La prise en compte est immédiate. Les liens sont en durs. Veuillez s'il vous plaît placer le lien retour vers notre site sur une page visible et indexée par google. Evitez également de mettre le lien au milieu de dizaine d'autres. Si ces deux points ne sont pas respectés nous ne pourront pas maintenir votre site dans la liste de nos partenaires.</p>
+<!--barre de navigation -->
+<p style="margin-top: 15px;">Page :
+<a href="javascript:if(confirm('http://www.i-souk.com/liens.php?page=1  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?'))window.location='http://www.i-souk.com/liens.php?page=1'" tppabs="http://www.i-souk.com/liens.php?page=1"><span class="plus">1</span></a>&nbsp;&nbsp;<a href="javascript:if(confirm('http://www.i-souk.com/liens.php?page=2  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?'))window.location='http://www.i-souk.com/liens.php?page=2'" tppabs="http://www.i-souk.com/liens.php?page=2"><span class="rien">2</span></a>&nbsp;&nbsp;</p>
+</td></tr>
+<tr><td><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">
+
+<strong>Partenaires :</strong></font>
+    <hr size="1" color="black"></td></tr></table>
+<table width="90%" align="center" border="0">
+<tr><td width="120">
+ <p align="center"><a href="javascript:if(confirm('http://www.thumbshots.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.thumbshots.org/'" tppabs="http://www.thumbshots.org/" target="_blank"><img src="image.pxf-url=http---www.thumbshots.org.jpg" tppabs="http://open.thumbshots.org/image.pxf?url=http://www.thumbshots.org" alt="This site uses Thumbshots previews This site uses Thumbshots previews
+" border="0"></a>
+</p></td>
+<td width="100%">
+    <!-- Start P R par le serveur -->
+        <!-- Start pagerank.fr -->
+        <a href="javascript:if(confirm('http://www.pagerank.fr/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.pagerank.fr/'" tppabs="http://www.pagerank.fr/" title="Mon PageRank"><img src="pagerank-actuel.gif-uri=http---www.thumbshots.org.gif" tppabs="http://www.pagerank.fr/pagerank-actuel.gif?uri=http://www.thumbshots.org" style="border: none;" alt="PageRank Actuel"/></a>
+        <!-- Start crea-pagerank.com -->
+
+
+
+<a href="javascript:if(confirm('http://www.thumbshots.org/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.thumbshots.org/'" tppabs="http://www.thumbshots.org/" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#336699"><b>This site uses Thumbshots previews</b></font></a><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"> : This site uses Thumbshots previews
+</font>
+</td></tr></table>
+<br><br><table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+   
+   <tr><td>
+   <table border="0" cellspacing="1" cellpadding="1">
+	<tr>
+	<td class="row" valign="top">
+	<p><a href="javascript:if(confirm('http://www.alsacreations.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.alsacreations.com/'" tppabs="http://www.alsacreations.com/" target="_blank"><img src="index-1.htm.jpg" tppabs="http://www.apercite.fr/api/apercite/120x90/oui/oui/http://www.alsacreations.com/" alt="Alsacréations Alsacréations : Actualités et tutoriels HTML, HTML5, CSS, CSS3, standards du web
+	" border="0"></a>
+	</p>
+	</td>
+	<td width="100%" class="row" valign="top" align="left">
+	
+	<a href="javascript:if(confirm('http://www.paidpr.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.paidpr.com/'" tppabs="http://www.paidpr.com/" title="Mon PageRank"><img src="pagerank.php-style=1&url=http---www.alsacreations.com-.gif" tppabs="http://www.paidpr.com/pagerank/pagerank.php?style=1&url=http://www.alsacreations.com/" style="border: none;" alt="PageRank Actuel"></a>
+	<a href="javascript:if(confirm('http://www.alsacreations.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.alsacreations.com/'" tppabs="http://www.alsacreations.com/" target="_blank" title="allez voir http://www.alsacreations.com/" class="tooltip"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#336699"><b>Alsacréations</b></font></a><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"> : <a onclick="javascript:hiden(2);" title="" target="blank" href="javascript:if(confirm('http://online.us.drweb.com/result/?url=http://www.alsacreations.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://online.us.drweb.com/result/?url=http://www.alsacreations.com/'" tppabs="http://online.us.drweb.com/result/?url=http://www.alsacreations.com/"> <img onmouseover="this.src='abuse.png'/*tpa=http://www.i-souk.com/images/abuse.png*/" onmouseout="this.src='abuse2.png'/*tpa=http://www.i-souk.com/images/abuse2.png*/" src="abuse2.png" tppabs="http://www.i-souk.com/images/abuse2.png" align="absmiddle" width="12" height="12" border="0"></a><br>Alsacréations : Actualités et tutoriels HTML, HTML5, CSS, CSS3, standards du web
+	</font>
+	</td>
+	</tr>
+	</table>
+   
+   
+   
+   </td></tr>
+   
+   
+   <tr><td>
+<strong><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">Explications<a name="Explications" id="Explications"></a> :</font></strong>
+<hr size="1" color="black">
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Pour 
+      être partenaire et faire un echange de (lien en dur) avec i-souk, 
+      c'est très simple, il suffit:<br>
+      1 - de placer un lien vers la page <a href="index.htm" tppabs="http://www.i-souk.com/" target="_blank"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">http://www.i-souk.com</font></a> 
+      sur une page visible de votre site. <strong>(pas dans 'fourre-tout' d'autres 
+      annuaires! )</strong><br>
+      2 - de remplir le formulaire ci-dessous.<br>
+      3 - une confirmation par mail sera envoy&eacute;e automatiquement.<br>
+      Nous vérifions r&eacute;guli&egrave;rement les liens, et lors de la vérification 
+      notre robot viendra v&eacute;rifer sur votre site que le lien vers i-souk 
+      est bien en place. Si c'est le cas, votre lien sera affiché sur notre page. 
+      Dans le cas contraire, votre lien ne sera pas affiché et votre site sera 
+      retiré de notre base. C'est tout simple :)</font><br>
+<hr size="1" color="black">
+      <p><font color="#666666" size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <strong>Restrictions:</strong><br>
+        1) Pas de site 'argent facile' sans rien faire !<br>
+        2) Pas de site de charme ou ' x '.<br>
+        3) Pas de site de casinos, sonneries, etc ..<br>
+        4) Pas de site avec popup intempestif.<br>
+        <strong>5) Tous les sites ind&eacute;sirables seront supprim&eacute;s sans avertissement.</strong><br>
+        <strong>6) Une v&eacute;rification r&eacute;guli&egrave;re des 'liens 
+        retour' est effectu&eacute;e et la suppression est imm&eacute;diate si 
+        celui-ci n'est pas retrouv&eacute; sur la page indiqu&eacute;e. Les liens retour plac&eacute;s dans une page 'foure-tout' sont refus&eacute;s .<br>
+        </strong></font> 
+        <br>
+      </p>
+    <hr size="1" color="black">
+  <p> <strong><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">Le 
+        code &agrave; recopier et &agrave; mettre sur votre site avant de commencer 
+        :</font></strong> </p>
+      
+      <!--<p><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><span class="Style1">(<strong>lien texte</strong>) :</span></font><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FF0000"> &lt;a 
+        href="http://www.i-souk.com" target="_blank">text6&lt;/a></font></p>-->
+        
+        <p><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><span class="Style1">(<strong>lien texte</strong>) :</span></font><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FF0000"> &lt;a 
+        href="http://www.i-souk.com" target="_blank">Annonces gratuites pour le Maroc&lt;/a></font></p>
+        
+      <font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000"><strong>Formulaire 
+        :</strong></font></p>
+      <hr size="1" color="black">
+<font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666"><strong>Attention : </strong>avant de vous inscrire, vous devez placer un lien vers la page <i>http://www.i-souk.com</i> sur une page de votre site.</font><br>
+<form action="http://www.i-souk.com/addlink.php" method="post" enctype="multipart/form-data">
+<table>
+	<tr>
+		<td align="right"><strong><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Nom de votre site : </font></strong></td>
+		<td><input type="text" name="title" size="30" maxlength="25"></td>
+	</tr>
+	<tr>
+		<td align="right"><strong><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">URL de votre site sans le / à la fin: </font></strong></td>
+		<td><input type="text" name="url" size="30" value="http://"></td>
+	</tr>
+	<tr>
+		<td align="right"><strong><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">URL de la page, sur votre site, où est affiché le lien vers i-souk : </font></strong></td>
+		<td><input type="text" name="recurl" size="30" value="http://"></td>
+	</tr>
+        <tr>
+		    <td align="right"><strong><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Description 
+              de vote site (150 car. max) : </font></strong></td>
+		<td><input type="text" name="description" size="30"></td>
+	</tr>
+	<tr>
+		<td align="right"><strong><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#666666">Entrez votre adresse email : </font></strong></td>
+		<td><input type="text" name="email" size="30"></td>
+	</tr>
+	<tr>
+		<td align="center" colspan="2"><input type="submit" value="Enregistrer votre site"></td>
+	</tr>
+</table>
+</form>
+</td></tr></table>
+
+<br />
+
+<!--<table width="90%" align="center" border="0">
+<tr><td>
+<font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#000000">
+<strong>Les autres sites qui proposent ce service d'echange de liens automatique :</strong></font>
+<hr size="1" color="black">
+      <a href="http://www.unesourisetmoi.info">Echange de liens automatique</a> </font>
+      <a href="http://www.unesourisetmoi.info/annuaire/" target="_blank">Annuaire gratuit</a> - <a href="http://unesourisetmoi.free.fr/annuaire/" target="_blank">Annuaire &agrave; validation imm&eacute;diate,sans obligation de lien retour.</a></td>
+  </tr></table><br>-->
+<!-- � laisser en place, merci -->
+<table width="90%" align="center" border="0">
+<tr>
+    <td> Sites mis en avant:
+   </td>
+</tr>
+</table>
+
+<table cellspacing="1" cellpadding="1" border="1" width="950px" style="margin: auto;">
+	<tr><td style="padding-bottom: 10px;">
+	<font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFF">
+	<strong>Sites mis en avant :</strong></font>
+    
+	<center>
+	<div>
+	<hr size="1" color="WHITE">
+	<marquee style="margin-bottom: 25px;"> 
+	<a href="javascript:if(confirm('http://www.topsurf.fr/?ref=1877  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.topsurf.fr/?ref=1877'" tppabs="http://www.topsurf.fr/?ref=1877" target="_blank"><img src="Top_surf10.gif" tppabs="http://top.surf.free.fr/images/Top_surf10.gif" border="0" alt="topsurf"></a>
+	<a href="javascript:if(confirm('http://www.doublestats.com/index.php3?act=add&parrain=stats29940  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.doublestats.com/index.php3?act=add&parrain=stats29940'" tppabs="http://www.doublestats.com/index.php3?act=add&parrain=stats29940" target="_blank"><img border="0" src="ban3.gif" tppabs="http://www.doublestats.com/logos/ban3.gif" width="88" height="31"></a> 
+	<a href="javascript:if(confirm('http://autosurf.wcm-concept.fr/?ref=22286  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://autosurf.wcm-concept.fr/?ref=22286'" tppabs="http://autosurf.wcm-concept.fr/?ref=22286" target="_blank"><img src="logo_wcm-concept.gif" tppabs="http://autosurf.wcm-concept.fr/images/logo_wcm-concept.gif" alt="" width="88" height="31" border="0"></a> 
+	<a target="blank" href="javascript:if(confirm('http://quiethits.com/?ref=12021  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://quiethits.com/?ref=12021'" tppabs="http://quiethits.com/?ref=12021"><img border="0" target="_blank" src="qh-88x31.gif" tppabs="http://quiethits.com/images/banners/qh-88x31.gif" width="88" height="31" alt="QuietHits Automated Traffic and Banner Exchange"></a>
+	<a href="javascript:if(confirm('http://www.libertyreserve.com/?ref=U3162095  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.libertyreserve.com/?ref=U3162095'" tppabs="http://www.libertyreserve.com/?ref=U3162095"><img border="0" alt="LibertyReserve" src="accept.gif" tppabs="https://www.libertyreserve.com/downloads/banners/accept.gif" width="88" height="31"></a>
+	<a href="javascript:if(confirm('http://bullestaux.com/index.php?refi=ptcmaster  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://bullestaux.com/index.php?refi=ptcmaster'" tppabs="http://bullestaux.com/index.php?refi=ptcmaster" target="_blank"><img src="bulle_bouton-ba9450.gif" tppabs="http://www.bullestaux.com/banners/bulle_bouton-ba9450.gif" border="0" width="88" height="31"></a> <a href="javascript:if(confirm('http://ul.to/ref/2075058  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://ul.to/ref/2075058'" tppabs="http://ul.to/ref/2075058" target="_blank"><img src="88x31.jpg" tppabs="http://uploaded.to/img/public/88x31.jpg" alt="uploaded.to" border="0" width="88" height="31"></a>
+	</marquee>
+	
+	</div></center></td>
+	</tr>
+	</table>
+    
+    
+	<div id="footer">
+	<table cellspacing="1" cellpadding="1" border="0" width="950px" style="margin: auto;" >
+	<tr>
+	<td>
+	<center>
+	
+	<!--<p><iframe src="http:// lebandjoun.free.fr/advertise/ad_rotator.php" width="468" height="60" marginheight="0" marginwidth="0" frameborder="0" scrolling="no"></iframe></p>
+	
+	<p align="center"><font size="1">Distribution : <a href="http://www.webmediaservices.fr/">R&eacute;f&eacute;rencement Web M&eacute;dia Services</a> - Version : 6.0 en <a href="http://www.webmediaservices.fr/outils,scripts,webmaster,site,internet.php">t&eacute;l&eacute;chargement gratuit</a> - (c) 2010-2012 - <a href="/partenariat/admin.php">Administration</a> - Minuatures offertes    par <a href="http://www.apercite.fr/" target="blank" alt="Apercite: G�n�rateur gratuit d'aper�us, screenshots et miniatures" title="Apercite: G�n�rateur gratuit d'aper�us, screenshots et miniatures">APERCITE.FR</a></font>
+	</p></center>-->
+	</td>
+	</tr>
+	</table>
+
+
+
+
+
+</body>
+</html><!--<p align="center" class="petit">utilisation : <a href="http://www.unesourisetmoi.info/liensdur/index.php" target="_blank">unesourisetmoi</a> 
+   - Version : 5.55 revue d'après le script de webodiscount</p>-->
+<!--ligne du dessous: code rajouté pour nbre de visiteurs en ligne 110412-->
+
+
+<div id="bas_site">
+
+    <p class="p_bas_site_right">
+        <a style="float:left;" href="infosociete.htm" tppabs="http://www.i-souk.com/infosociete.htm">Qui sommes nous?</a> <a style="float:left;margin-left: 5px;" href="liens.php.htm" tppabs="http://www.i-souk.com/liens.php">Partenaires</a>
+		<a href="regles.htm" tppabs="http://www.i-souk.com/regles.htm">Règles de Publication</a> &nbsp;
+		<a href="cgu.htm" tppabs="http://www.i-souk.com/cgu.htm">Informations Légales / CGU</a> &nbsp;
+		<a href="contact.htm" tppabs="http://www.i-souk.com/contact.htm">Contact</a>
+	</p>
+
+</div>
+<div class="text_bas_site">Que vous vouliez <a href="ann_type.php-type=1.htm" tppabs="http://www.i-souk.com/ann_type.php?type=1">vendre</a>, acheter, louer, troquer ou donner vous pourrez quel que soit votre besoin réaliser une de ses opérations facilement et rapidement sur i-souk.com votre marché d'annonces au Maroc. Le site a été créé pour vous permettre de dénicher la perle rare et faire de bonnes affaires en achetant ou en vendant. Vous avez assurément comme de nombreuses familles de nombreux objets, des livres, des jeux vidéos, des vêtements ou autres babioles dont vous ne vous servez plus. Avec i-souk.com, les vendre s'avère être très simple. Il vous suffit, pour cela, de <a href="deposer-une-annonce.htm" tppabs="http://www.i-souk.com/deposer-une-annonce.htm">déposer gratuitement une petite annonce</a> sur notre site. Il en est de même si vous cherchez à <a href="Categorie-2-Voitures.htm" tppabs="http://www.i-souk.com/Categorie-2-Voitures.htm">vendre votre voiture</a>, à acheter une moto ou un véhicule utilitaire, si vous recherchez du matériel professionnel, un bien immobilier à acheter ou si vous désirez revendre votre résidence principale. Que vous soyez vendeur ou acheteur, i-souk.com grâce à sa carte des régions du Maroc, vous permez de sélectionnner les petites annonces près de chez vous ou toucher de futurs acheteurs dans votre ville ou votre région. N'oubliez pas, tout se vend et tout se troque sur i-souk.com, <strong><i>le marché d'annonces du Maroc</i></strong> !</div>
+<div class="copyright_bas_site">Copyright &copy; 2012 Tous droits réservés <a class="lien_foot" href="index.htm" tppabs="http://www.i-souk.com/">i-souk</a> / <a href="index.htm" tppabs="http://www.i-souk.com/" class="lien_foot" onclick="window.open(this.href); return false;"></a>
+									Design <a href="javascript:if(confirm('http://www.4netwebs.com/  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?'))window.location='http://www.4netwebs.com/'" tppabs="http://www.4netwebs.com/" class="lien_foot" onclick="window.open(this.href); return false;">4NetWebs</a> - Agence Web Benalmadena Espagne</div>
+<script type="text/javascript" src="functions_js.js" tppabs="http://www.i-souk.com/js/functions_js.js"></script>
+
+</div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

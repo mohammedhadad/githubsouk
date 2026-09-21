@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>حسابي</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase-config.js"></script>
+<style>
+  body{font-family:Arial,sans-serif;background:#f5f5f5;margin:0;}
+  .wrap{max-width:700px;margin:40px auto;background:#fff;padding:30px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+  .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+  input,textarea{width:100%;padding:10px;margin-bottom:12px;border:1px solid #ccc;border-radius:4px;box-sizing:border-box}
+  button{padding:10px 20px;background:#2e8b57;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:16px}
+  .msg{padding:10px;border-radius:4px;margin-bottom:12px;display:none}
+  .err{background:#fdecea;color:#b00020}
+  .ok{background:#e6f4ea;color:#137333}
+  .ad{border-bottom:1px solid #eee;padding:12px 0}
+  .ad img{max-width:100px;border-radius:4px;vertical-align:middle;margin-left:10px}
+  a.logout{color:#b00020;cursor:pointer}
+  #loading{text-align:center;padding:60px;font-size:18px}
+</style>
+</head>
+<body>
+
+<div id="loading">جاري التحميل...</div>
+
+<div class="wrap" id="content" style="display:none;">
+  <div class="topbar">
+    <h2>مرحبا، <span id="userName"></span></h2>
+    <div><a href="index.htm">الموقع</a> | <a class="logout" id="logoutBtn">خروج</a></div>
+  </div>
+
+  <div id="message" class="msg"></div>
+
+  <h3>➕ أضف منتج جديد</h3>
+  <form id="adForm">
+    <input type="text" id="tit" placeholder="عنوان المنتج" required>
+    <input type="text" id="cat" placeholder="الفئة (مثلا: سيارات، عقار، إلكترونيك...)">
+    <input type="text" id="pri" placeholder="الثمن">
+    <input type="text" id="vil" placeholder="المدينة">
+    <input type="text" id="tel" placeholder="الهاتف">
+    <textarea id="ann" rows="4" placeholder="الوصف"></textarea>
+    <input type="file" id="photo" accept="image/*">
+    <button type="submit">نشر المنتج</button>
+  </form>
+
+  <h3 style="margin-top:30px;">📦 منتجاتي</h3>
+  <div id="adsList"><p>جاري التحميل...</p></div>
+</div>
+
+<script>
+let currentUser = null;
+
+async function init() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) {
+    window.location.href = "login.html";
+    return;
+  }
+  currentUser = session.user;
+  document.getElementById("userName").textContent = currentUser.user_metadata.full_name || currentUser.email;
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("content").style.display = "block";
+  loadMyAds();
+}
+
+function showMessage(text, type) {
+  const box = document.getElementById("message");
+  box.textContent = text;
+  box.className = "msg " + type;
+  box.style.display = "block";
+}
+
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+  await supabaseClient.auth.signOut();
+  window.location.href = "index.htm";
+});
+
+document.getElementById("adForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  let photoUrl = null;
+  const photoFile = document.getElementById("photo").files[0];
+
+  if (photoFile) {
+    const fileName = currentUser.id + "_" + Date.now() + "_" + photoFile.name;
+    const { data: uploadData, error: uploadError } = await supabaseClient.storage
+      .from("ads-photos")
+      .upload(fileName, photoFile);
+
+    if (uploadError) {
+      showMessage("خطأ فرفع الصورة: " + uploadError.message, "err");
+      return;
+    }
+    const { data: urlData } = supabaseClient.storage.from("ads-photos").getPublicUrl(fileName);
+    photoUrl = urlData.publicUrl;
+  }
+
+  const { error } = await supabaseClient.from("ads").insert({
+    user_id: currentUser.id,
+    titre: document.getElementById("tit").value,
+    categorie: document.getElementById("cat").value,
+    prix: document.getElementById("pri").value,
+    ville: document.getElementById("vil").value,
+    telephone: document.getElementById("tel").value,
+    description: document.getElementById("ann").value,
+    photo_url: photoUrl
+  });
+
+  if (error) {
+    showMessage("خطأ: " + error.message, "err");
+  } else {
+    showMessage("تم إضافة المنتج بنجاح!", "ok");
+    document.getElementById("adForm").reset();
+    loadMyAds();
+  }
+});
+
+async function loadMyAds() {
+  const { data: ads, error } = await supabaseClient
+    .from("ads")
+    .select("*")
+    .eq("user_id", currentUser.id)
+    .order("created_at", { ascending: false });
+
+  const container = document.getElementById("adsList");
+
+  if (error) {
+    container.innerHTML = "<p>وقع مشكل فتحميل المنتجات.</p>";
+    return;
+  }
+  if (!ads || ads.length === 0) {
+    container.innerHTML = "<p>مازال ما زدتيش شي منتج.</p>";
+    return;
+  }
+
+  container.innerHTML = ads.map(ad => `
+    <div class="ad">
+      ${ad.photo_url ? `<img src="${ad.photo_url}">` : ""}
+      <strong>${ad.titre}</strong> — ${ad.prix || ""}
+      <br><small>${ad.ville || ""} · ${new Date(ad.created_at).toLocaleDateString("ar")}</small>
+    </div>
+  `).join("");
+}
+
+init();
+</script>
+</body>
+</html>
